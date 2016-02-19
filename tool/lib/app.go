@@ -51,7 +51,7 @@ func (self *App) Parse(args []string) {
 
 func (self *App) required() {
 	self.app.Flag("vendor_id", vendorMsg).Short('V').Required().StringVar(&self.VendorId)
-	self.app.Flag("properties_filename", propertiesMsg).Short('f').Default("bin/autoingestion.properties").StringVar(&self.PropertiesFile)
+	self.app.Flag("properties_filename", propertiesMsg).Short('f').Default("vendor/autoingestion.properties").StringVar(&self.PropertiesFile)
 	self.app.Flag("report_type", reportTypeMsg).Short('t').Default("Sales").StringVar(&self.ReportType)
 	self.app.Flag("date_type", dateTypeMsg).Short('p').Default("Daily").StringVar(&self.DateType)
 }
