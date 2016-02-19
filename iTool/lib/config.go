@@ -12,7 +12,6 @@ import (
 var (
 	production = `production`
 	filename   = `app.conf`
-	directory  = `conf/`
 )
 
 // Models an entity config reader
@@ -44,7 +43,7 @@ func NewConfig() (config *Config, err error) {
 
 // Regresa la ruta del archivo de configuración
 func (self *Config) File() (file string) {
-	return path.Join(self.Pwd, directory, self.Filename)
+	return path.Join(self.Pwd, self.Filename)
 }
 
 // Obtiene una propiedad de la configuración de base de datos

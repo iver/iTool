@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/ivan-iver/itool/lib"
+	"itool/lib"
 )
 
 func main() {

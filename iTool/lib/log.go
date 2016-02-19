@@ -53,7 +53,7 @@ func NewLogger(config *Config) (l *Logger) {
 }
 
 func (self *Logger) setOutput() {
-	output := self.Default("log.output")
+	output := fmt.Sprintf("log/%v", self.Default("log.output"))
 	file, err := os.OpenFile(output, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0666)
 	if err != nil {
 		fmt.Errorf("| Error | Opening file: %v \n", err)
