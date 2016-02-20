@@ -26,11 +26,6 @@ type App struct {
 	PropertiesFile string
 	ReportType     string
 	DateType       string
-
-	InitDate string
-	EndDate  string
-
-	Date string
 }
 
 func NewApp() (application *App) {
@@ -56,13 +51,13 @@ func (self *App) required() {
 	self.app.Flag("date_type", dateTypeMsg).Short('p').Default("Daily").StringVar(&self.DateType)
 }
 
-func (self *App) Bulk(action kingpin.Action) {
-	bulk := self.app.Command("bulk", bulkMsg).Action(action)
-	bulk.Arg("init_date", initDateMsg).Required().StringVar(&self.InitDate)
-	bulk.Arg("end_date", endDateMsg).Required().StringVar(&self.EndDate)
+func (self *App) Bulk(cmd BulkCommand) {
+	bulk := self.app.Command("bulk", bulkMsg).Action(cmd.Run)
+	bulk.Arg("init_date", initDateMsg).Required().StringVar(&cmd.InitDate)
+	bulk.Arg("end_date", endDateMsg).Required().StringVar(&cmd.EndDate)
 }
 
-func (self *App) One(action kingpin.Action) {
-	one := self.app.Command("one", oneMsg)
-	one.Arg("date", dateMsg).StringVar(&self.Date)
+func (self *App) One(cmd OneCommand) {
+	one := self.app.Command("one", oneMsg).Action(cmd.Run)
+	one.Arg("date", dateMsg).StringVar(&cmd.Date)
 }

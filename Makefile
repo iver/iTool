@@ -11,14 +11,15 @@ install: base get
 
 get:
 	go get -v bitbucket.org/ivan-iver/config;
+	go get -v gopkg.in/alecthomas/kingpin.v2;
 
 build: install
 	@go build -o bin/itool itool;
-
-run: build
 	@cp ${ACTUAL}/itool/app.conf bin/;
 	@mkdir -p bin/log/ bin/vendor/;
 	@cp itool/vendor/* bin/vendor/;
+
+run: build
 	@cd bin && ./itool;
 
 base:
