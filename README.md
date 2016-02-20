@@ -38,4 +38,7 @@ $ go run main.go
 
 ### TODO:
 
-* 
+* Execute autoingestion
+* Validate date parameters
+* Validate range dates
+* Create examples
