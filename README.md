@@ -1,6 +1,9 @@
 ## iTool
 
-A command-line tool for iTunes Connect Reports
+**Work in progress**
+
+[2016.02.20] This tool is not complete, please come back soon.
+A command-line tool for iTunes Connect Reports. 
 
 ### Dependencies
 
@@ -22,3 +25,17 @@ $ unzip -j itool/vendor/Autoingestion.class.zip Autoingestion/?utoingestion.* -d
 
 ### Run iTool
 
+You can run from make:
+
+```$ make run ```
+
+Or if you prefere from `go run`:
+
+```
+$ cd itool
+$ go run main.go
+```
+
+### TODO:
+
+* 
