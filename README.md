@@ -2,7 +2,8 @@
 
 **Work in progress**
 
-[2016.02.20] This tool is not complete, please come back soon.
+**[Deprecated]** Use <a href="https://help.apple.com/itc/appsreporterguide/#/apdb00e6478b">Apple reporter</a> instead.
+
 A command-line tool for iTunes Connect Reports. 
 
 ### Dependencies
